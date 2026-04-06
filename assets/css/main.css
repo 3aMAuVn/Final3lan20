@@ -9291,12 +9291,6 @@ body:not(.page-demo):not([class*="page-demo-"]) .page-hero{
 
 
 
-/* === 2026-03-29 visible section blocks use full screen width === */
-html, body{
-  width:100%;
-  max-width:100%;
-  overflow-x:hidden !important;
-}
 
 /* Keep header/footer shell as already working */
 .topbar .container,
@@ -9402,6 +9396,101 @@ details.acc,
   .program-feature-hero,
   .home-demo-showcase,
   .card{
+    padding-left:12px !important;
+    padding-right:12px !important;
+  }
+}
+
+
+
+/* === 2026-03-29 visible sections full width, safe hero === */
+html, body{
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden !important;
+}
+
+/* Keep header/footer full width */
+.topbar .container,
+.footer .container,
+.footer-inline .container{
+  width:100% !important;
+  max-width:none !important;
+  padding-left:0 !important;
+  padding-right:0 !important;
+  margin:0 !important;
+  box-sizing:border-box !important;
+}
+
+/* Hero sections: full width without breakout shifting */
+.hero,
+.page-hero{
+  width:100% !important;
+  max-width:none !important;
+  margin-left:0 !important;
+  margin-right:0 !important;
+  left:auto !important;
+  right:auto !important;
+  position:relative !important;
+  transform:none !important;
+  box-sizing:border-box !important;
+}
+
+.hero .container,
+.page-hero .container,
+.page-hero > .container.page-hero__inner{
+  width:100% !important;
+  max-width:none !important;
+  margin:0 !important;
+  padding-left:24px !important;
+  padding-right:24px !important;
+  left:auto !important;
+  right:auto !important;
+  position:static !important;
+  transform:none !important;
+  box-sizing:border-box !important;
+}
+
+/* Visible non-hero sections can still use wide layout */
+.quicklinks,
+details.acc,
+.club-highlight,
+.page-card,
+.form-card,
+.policy-summary,
+.price-tool,
+.premium-panel,
+.program-feature-hero,
+.home-demo-showcase,
+.card{
+  width:100% !important;
+  max-width:none !important;
+  box-sizing:border-box !important;
+}
+
+/* Fee page and inner grids */
+.price-tool .wrap,
+.price-grid,
+.triple-grid,
+.club-section,
+.imp-box,
+.ql-grid,
+.acc-body,
+.program-feature-grid,
+.two-grid,
+.why-grid,
+.grid,
+.mini-grid,
+.policy-grid{
+  width:100% !important;
+  max-width:none !important;
+  box-sizing:border-box !important;
+}
+
+@media (max-width:700px){
+  .hero .container,
+  .page-hero .container,
+  .page-hero > .container.page-hero__inner{
     padding-left:12px !important;
     padding-right:12px !important;
   }
