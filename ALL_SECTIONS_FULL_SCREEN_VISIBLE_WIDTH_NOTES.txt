@@ -1,0 +1,2 @@
+This package keeps the already-working header/footer width, and changes the visible white page sections themselves
+to span the full viewport width, including the fee page blocks.
