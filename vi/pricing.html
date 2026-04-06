@@ -1,161 +1,150 @@
 ---
 layout: page
-title: Học phí | Magic Math Master
-description: Học phí dạy kèm toán minh bạch tại Úc. Bảng giá tương tác cho Tiểu học,
-  Lớp 7–10 và VCE. Tuỳ chọn rõ ràng cho chương trình chuẩn, nâng cao, thi tuyển chọn
-  và AMC/AMO.
-lang: vi
+title: 费用 | Magic Math Master
+description: 澳洲透明数学辅导收费。可查看小学、7–10年级和 VCE 课程的互动收费表，包含标准、拓展、选拔考试与 AMC/AMO 选项。
+lang: zh
 nav_key: main_vi
 body_class: page-pricing page-vi
 show_page_hero: true
-hero_title: Học phí
-hero_subtitle: Chọn khối lớp và loại chương trình để xem học phí cập nhật. Nếu bạn
-  chưa chắc, chúng tôi có thể gợi ý lựa chọn phù hợp dựa trên mục tiêu và thời gian.
+hero_title: 费用
+hero_subtitle: 请选择年级和课程类型查看最新收费。如果您暂时不确定，我们也可以根据孩子的目标与时间安排提供建议。
 permalink: /vi/pricing.html
 ---
+<style>
+  body.page-pricing.page-vi{
+    --page-shell-gutter: clamp(20px, 4vw, 32px) !important;
+  }
+  @media (max-width: 700px){
+    body.page-pricing.page-vi{
+      --page-shell-gutter: 18px !important;
+    }
+  }
+</style>
 <main class="container">
-<!-- ===== CHIP LINKS ===== -->
 <section class="section" id="jump-links">
 <div class="card" style="padding:16px;">
-<div aria-label="Liên kết nhanh" class="chip-links" role="navigation">
-<a class="chip-link" href="#detailed-fees">Học phí chi tiết</a>
-<a class="chip-link" href="#maths-club-fee">Phí Câu lạc bộ Toán</a>
-<a class="chip-link" href="#discounts-rewards">Giảm giá &amp; thưởng</a>
+<div aria-label="快速跳转链接" class="chip-links" role="navigation">
+<a class="chip-link" href="#detailed-fees">💲 详细费用</a>
+<a class="chip-link" href="#maths-club-fee">🌈 数学俱乐部费用</a>
+<a class="chip-link" href="#discounts-rewards">🎁 优惠与奖励</a>
 </div>
 </div>
 </section>
-<!-- Interactive selectors + at-a-glance + table -->
 <section class="section price-tool" id="detailed-fees">
-<h2 class="section-title">Học phí tương tác</h2>
+<h2 class="section-title">互动费用</h2>
 <p class="section-sub">
-        Chọn khối lớp, môn VCE (nếu cần), và loại chương trình. Tất cả mức giá là <strong>theo từng học sinh</strong>.
-      </p>
-<!-- Controls -->
+  请选择年级、高中毕业考试科目（如适用）和课程类型。所有价格均按每位学生计算。
+  </p>
 <div class="wrap">
 <div class="bar">
-<!-- Year level selector -->
-<div aria-label="Chọn khối lớp" class="seg" role="tablist">
-<button aria-selected="true" class="active" data-level="primary" role="tab">Tiểu học (Prep–Lớp 6)</button>
-<button aria-selected="false" data-level="mid" role="tab">Lớp 7–10</button>
-<button aria-selected="false" data-level="vce" role="tab">Lớp 11–12 (VCE)</button>
+<div aria-label="年级选择" class="seg" role="tablist">
+<button aria-selected="true" class="active" data-level="primary" role="tab">小学（学前班–6年级）</button>
+<button aria-selected="false" data-level="mid" role="tab">7–10年级</button>
+<button aria-selected="false" data-level="vce" role="tab">11–12年级（高中毕业考试）</button>
 </div>
-<!-- VCE subject selector -->
-<div aria-label="Chọn môn VCE" class="vceBox" id="vceBox">
-<div class="title">Môn VCE</div>
-<div aria-label="Môn VCE" class="seg" role="tablist">
-<button aria-selected="true" class="active" data-vce="general" role="tab">Toán Tổng quát</button>
-<button aria-selected="false" data-vce="methods" role="tab">Toán Phương pháp</button>
-<button aria-selected="false" data-vce="specialist" role="tab">Toán Chuyên sâu</button>
+<div aria-label="高中毕业考试科目选择" class="vceBox" id="vceBox">
+<div class="title">高中毕业考试科目</div>
+<div aria-label="高中毕业考试科目" class="seg" role="tablist">
+<button aria-selected="true" class="active" data-vce="general" role="tab">普通数学</button>
+<button aria-selected="false" data-vce="methods" role="tab">数学方法</button>
+<button aria-selected="false" data-vce="specialist" role="tab">专业数学</button>
 </div>
-<div class="hint">VCE có phụ phí trên mức giá cơ bản trong bảng.</div>
+<div class="hint">高中毕业考试科目会在基础收费基础上作相应调整。</div>
 </div>
-<!-- Program type selector -->
-<div aria-label="Chọn loại chương trình" class="vceBox" id="trackBox" style="display:block;">
-<div class="title">Loại chương trình</div>
-<div aria-label="Loại chương trình" class="seg" role="tablist">
-<button aria-selected="true" class="active" data-track="standard" role="tab">Chuẩn</button>
-<button aria-selected="false" data-track="extension" role="tab">Nâng cao</button>
-<button aria-selected="false" data-track="selective" role="tab">Thi tuyển chọn</button>
-<button aria-selected="false" data-track="amc" role="tab">AMC/AMO</button>
-<button aria-selected="false" data-track="amointensive" role="tab">AMO Chuyên sâu</button>
+<div aria-label="课程类型选择" class="vceBox" id="trackBox" style="display:block;">
+<div class="title">课程类型</div>
+<div aria-label="课程类型" class="seg" role="tablist">
+<button aria-selected="true" class="active" data-track="standard" role="tab">标准课程</button>
+<button aria-selected="false" data-track="extension" role="tab">拓展课程</button>
+<button aria-selected="false" data-track="selective" role="tab">选拔考试</button>
+<button aria-selected="false" data-track="amc" role="tab">数学竞赛</button>
+<button aria-selected="false" data-track="amointensive" role="tab">竞赛强化</button>
 </div>
-<div class="hint">Phụ phí chương trình được cộng thêm vào mức giá cơ bản + điều chỉnh theo khối lớp.</div>
+<div class="hint">课程附加项将在基础收费和年级调整的基础上计算。</div>
 </div>
-<!-- Note box -->
 <div class="note" id="ruleNote">
 <div class="badge-row">
-<span class="badge" id="badgeYear">Điều chỉnh Tiểu học</span>
-<span class="badge" id="badgeTrack">Chuẩn</span>
-<span class="badge warn" id="minBadge">Tối thiểu 60 phút cho 5+ học sinh</span>
+<span class="badge" id="badgeYear">小学阶段调整</span>
+<span class="badge" id="badgeTrack">标准课程</span>
+<span class="badge warn" id="minBadge">5 人以上至少 60 分钟</span>
 </div>
 <div>
 <strong id="ruleLine">
-                Toán Tiểu học: –$5 (30 phút) và –$10 (60 phút) mỗi học sinh.<br/>
-                Dạy kèm chuẩn: +$0.
-              </strong>
-<div class="sub" id="extraLine">Gợi ý: buổi 60 phút có thêm thời gian luyện tập + phản hồi.</div>
+    小学数学：每位学生 30 分钟减 $5，60 分钟减 $10。<br/>标准课程辅导：+$0。
+    </strong>
+<div class="sub" id="extraLine">提示：60 分钟课程通常能提供更多练习与反馈。</div>
 </div>
 </div>
 </div>
 </div>
-<!-- Fees at a glance -->
 <section class="section" id="fees-glance">
-<h2 class="section-title">Tổng quan học phí</h2>
+<h2 class="section-title">费用概览</h2>
 <p class="section-sub">
-          Các thẻ này sẽ tự cập nhật theo lựa chọn ở trên — luôn khớp với bảng.
-        </p>
+   这些卡片会根据您的选择自动更新，因此会始终与下方收费表保持一致。
+  </p>
 <div class="price-grid">
-<!-- Online 60 (1-to-1) -->
 <div class="price-card" id="glance-online">
 <div class="price-top">
-<h3>Trực tuyến</h3>
-<span class="kicker" id="glance-badge-online">1 kèm 1 • 60 phút</span>
+<h3>线上</h3>
+<span class="kicker" id="glance-badge-online">一对一 • 60 分钟</span>
 </div>
 <div class="fee-chips">
-<span class="fee-chip">Cấu trúc rõ</span>
-<span class="fee-chip">Linh hoạt</span>
-<span class="fee-chip">Phản hồi kỹ</span>
+<span class="fee-chip">结构清晰</span>
+<span class="fee-chip">灵活安排</span>
+<span class="fee-chip">充分反馈</span>
 </div>
 <div class="price" id="glance-price-online">$—</div>
-<div class="per" id="glance-per-online">mỗi 60 phút (mỗi học sinh)</div>
-<div class="parents-get">
-<strong>Phụ huynh nhận được:</strong> lộ trình rõ ràng + phản hồi tiến độ và bước tiếp theo.
-            </div>
+<div class="per" id="glance-per-online">每 60 分钟（每位学生）</div>
+<div class="parents-get">👨‍👩‍👧‍👦 <strong>家长将获得：</strong> 清晰的学习计划、进度反馈和下一步建议。</div>
 </div>
-<!-- In-person 60 (1-to-1) -->
 <div class="price-card featured" id="glance-inperson">
 <div class="price-top">
-<h3>Trực tiếp</h3>
-<span class="kicker" id="glance-badge-inperson">1 kèm 1 • 60 phút</span>
+<h3>线下</h3>
+<span class="kicker" id="glance-badge-inperson">一对一 • 60 分钟</span>
 </div>
 <div class="fee-chips">
-<span class="fee-chip">Hỗ trợ sát</span>
-<span class="fee-chip">Luyện có hướng dẫn</span>
-<span class="fee-chip">Tự tin</span>
+<span class="fee-chip">面对面支持</span>
+<span class="fee-chip">引导练习</span>
+<span class="fee-chip">建立信心</span>
 </div>
 <div class="price" id="glance-price-inperson">$—</div>
-<div class="per" id="glance-per-inperson">mỗi 60 phút (mỗi học sinh)</div>
-<div class="parents-get">
-<strong>Trực tiếp bao gồm:</strong> thời gian di chuyển/chuẩn bị (tuỳ tình trạng sắp xếp).
-            </div>
+<div class="per" id="glance-per-inperson">每 60 分钟（每位学生）</div>
+<div class="parents-get">📍 <strong>线下课程包含：</strong> 路程与准备时间（视安排情况而定）。</div>
 </div>
-<!-- 30-min snapshot (1-to-1) -->
 <div class="price-card" id="glance-30">
 <div class="price-top">
-<h3>Buổi ngắn</h3>
-<span class="kicker" id="glance-badge-30">1 kèm 1 • 30 phút</span>
+<h3>短课时</h3>
+<span class="kicker" id="glance-badge-30">一对一 • 30 分钟</span>
 </div>
 <div class="fee-chips">
-<span class="fee-chip" id="glance-30-note">Hiển thị khi có lựa chọn 30 phút</span>
+<span class="fee-chip" id="glance-30-note">仅在可选 30 分钟课程时显示</span>
 </div>
 <div class="price" id="glance-price-30" style="font-size:34px;">$—</div>
-<div class="per" id="glance-per-30">mỗi 30 phút (trực tuyến / trực tiếp)</div>
+<div class="per" id="glance-per-30">每 30 分钟（线上 / 线下课程）</div>
 <div class="parents-get" id="glance-30-helper">
-              Gợi ý: 60 phút thường hiệu quả hơn (nhiều thời gian luyện tập + phản hồi).
-            </div>
+    提示：60 分钟课程通常能带来更好的进步（有更多时间进行练习与反馈）。
+   </div>
 </div>
-<!-- 5+ students -->
 <div class="price-card" id="glance-5plus">
 <div class="price-top">
-<h3>5+ học sinh</h3>
-<span class="kicker" id="glance-badge-5plus">5+ • tối thiểu 60 phút</span>
+<h3>5 人以上</h3>
+<span class="kicker" id="glance-badge-5plus">5 人以上 • 至少 60 分钟</span>
 </div>
 <div class="fee-chips">
-<span class="fee-chip">Giá tốt</span>
-<span class="fee-chip">Cùng trình độ</span>
-<span class="fee-chip">Nề nếp hằng tuần</span>
+<span class="fee-chip">更高性价比</span>
+<span class="fee-chip">水平相近</span>
+<span class="fee-chip">每周固定节奏</span>
 </div>
 <div class="price" id="glance-price-5plus" style="font-size:34px;">$—</div>
-<div class="per" id="glance-per-5plus">mỗi 60 phút (mỗi học sinh)</div>
+<div class="per" id="glance-per-5plus">每 60 分钟（每位学生）</div>
 <div class="parents-get" id="glance-5plus-helper">
-<strong>Lưu ý:</strong> tối thiểu 60 phút cho nhóm 5+ để đảm bảo chất lượng buổi học.
-            </div>
+<strong>提示：</strong> 为保证课程质量，5 人以上小组课程至少安排 60 分钟。
+   </div>
 </div>
 </div>
 </section>
-<!-- FEES TABLE -->
 <div class="wrap">
-<table aria-label="Bảng học phí" class="fees-table">
+<table aria-label="辅导收费表" class="fees-table">
 <colgroup>
 <col style="width:90px;"/>
 <col style="width:240px;"/>
@@ -164,202 +153,202 @@ permalink: /vi/pricing.html
 </colgroup>
 <thead>
 <tr>
-<th>Icon</th>
-<th>Chương trình</th>
-<th>30 phút / học sinh</th>
-<th>60 phút / học sinh</th>
+<th>图标</th>
+<th>课程</th>
+<th>30 分钟 / 每位学生</th>
+<th>60 分钟 / 每位学生</th>
 </tr>
 </thead>
 <tbody id="priceBody"></tbody>
 </table>
 <div class="tool-footer">
-<strong>Ghi chú:</strong> Mức phí học trực tiếp đã bao gồm thời gian di chuyển/chuẩn bị.
-          Với lớp nhóm, học sinh nên có trình độ tương đương.
-          <strong>Nhóm 5+:</strong> tối thiểu 60 phút để đảm bảo chất lượng buổi học.
-        </div>
-<!-- Value cards -->
+<strong>说明：</strong>
+   线下课程收费包含路程与准备时间。小组课程建议学生水平相近。
+   <strong>5 人以上：</strong>为保证课程质量，至少安排 60 分钟。
+  </div>
 <div class="triple-grid">
 <div class="info-card">
-<h3>Bao gồm những gì</h3>
+<h3>📘 课程包含</h3>
 <ul style="margin:0; padding-left:20px; line-height:1.7;">
-<li>Kế hoạch học cá nhân và mục tiêu</li>
-<li>Phản hồi đúng trọng tâm và bước tiếp theo rõ ràng</li>
-<li>Bài học phù hợp nhu cầu và thời gian của học sinh</li>
+<li>个性化学习计划和明确目标</li>
+<li>针对性反馈和清晰的下一步建议</li>
+<li>课程内容与孩子的需求及时间安排相匹配</li>
 </ul>
 <div class="parents-get" style="margin-top:12px;">
-<strong>Phù hợp nhất cho:</strong> gia đình muốn có cấu trúc + thấy tiến bộ rõ.
-            </div>
+<strong>适合：</strong>希望课程有结构且进步清晰可见的家庭。
+   </div>
 </div>
 <div class="info-card">
-<h3>Tự tin + đều đặn</h3>
+<h3>🌈 建立信心与稳定进步</h3>
 <div class="quote-box">
-              Tiến bộ đến từ <b>giải thích rõ + luyện tập đều</b> — không phải từ áp lực.
-              Buổi học luôn nhẹ nhàng, có cấu trúc và hỗ trợ.
-            </div>
+    进步来自于 <b>清晰的教学 + 持续的练习</b>，而不是压力。
+    我们让课程保持平和、有结构并富有支持性。
+   </div>
 <div class="parents-get">
-<strong>Kết quả:</strong> học sinh hiểu bài, luyện tập tốt hơn và tự tin hơn theo từng tuần.
-            </div>
+<strong>结果：</strong>学生每周都能更理解、更会练习，也更有自信。
+   </div>
 </div>
 <div class="info-card">
-<h3>Điều cần biết</h3>
+<h3>✅ 温馨提示</h3>
 <div class="notes-box">
 <ul>
-<li>Có lựa chọn trực tuyến và trực tiếp (tuỳ tình trạng sắp xếp).</li>
-<li>Lớp nhóm nhỏ thường là lựa chọn “giá tốt” để học đều hằng tuần.</li>
-<li>Hãy hỏi chúng tôi để gợi ý lộ trình phù hợp (bắt kịp / theo kịp / bứt phá).</li>
+<li>可选择线上或线下课程（视安排情况而定）。</li>
+<li>小组课程通常是建立稳定每周学习节奏的高性价比选择。</li>
+<li>欢迎联系我们，帮您判断最适合的路径（补基础 / 跟上进度 / 提前拓展）。</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 </section>
-<!-- Important Information -->
-<section aria-label="Thông tin quan trọng" class="imp-box">
+<section aria-label="Important information" class="imp-box">
 <div class="imp-head">
-<div class="imp-pin"></div>
-<h2 class="imp-title">Thông tin quan trọng (Tóm tắt)</h2>
+<div class="imp-pin">📌</div>
+<h2 class="imp-title">重要信息（简要概览）</h2>
 </div>
 <ul class="imp-list">
-<li><b>Thanh toán:</b> Học phí được thanh toán trước buổi học.</li>
-<li><b>Huỷ/đổi lịch:</b> Vui lòng báo trước ít nhất <b>24 giờ</b> để huỷ hoặc đổi lịch. Huỷ muộn có thể vẫn bị tính phí.</li>
-<li><b>Hoàn tiền:</b> Có thể hoàn tiền cho buổi học huỷ với <b>24+ giờ</b> báo trước hoặc có giấy xác nhận y tế hợp lệ.</li>
-<li><b>Hành vi:</b> Học sinh cần lịch sự, tôn trọng và tích cực để mọi người học thoải mái.</li>
-<li><b>Trao đổi:</b> Chúng tôi cập nhật thường xuyên cho gia đình; phụ huynh có thể liên hệ <b>Dr Tuyet Vu</b> nếu có thắc mắc.</li>
+<li><b>付款：</b> 课程费用需在上课前支付。</li>
+<li><b>取消课程：</b> 如需取消或变更课程，请至少提前 <b>24 小时通知</b>。临时取消仍可能被收费。</li>
+<li><b>退款：</b> 如提前 <b>24 小时以上</b>取消课程，或提供有效医疗证明，可能可以退款。</li>
+<li><b>课堂行为：</b>学生需要保持友善、尊重和积极的态度，以便每个人都能在舒适环境中学习。</li>
+<li><b>沟通：</b>我们会持续向家庭更新学习进展，家长也欢迎随时联系 <b>武雪博士</b> 提出问题。</li>
 </ul>
 <p class="imp-footer">
-        Xem đầy đủ tại trang <a class="imp-link" href="policies.html">Chính sách</a>.
-      </p>
+  完整详情请阅读我们的
+  <a class="imp-link" href="policies.html">政策</a>。
+  </p>
 </section>
-<!-- Maths Club (Standalone) -->
 <section class="club-section section" id="maths-club-fee">
-<h2 class="section-title" style="text-align:center; margin-top:0;">🌈 Phí Câu lạc bộ Toán</h2>
+<h2 class="section-title" style="text-align:center; margin-top:0;">🌈 数学俱乐部费用</h2>
 <p class="club-sub">
-        Dành cho học sinh <b>chưa đăng ký dạy kèm</b> nhưng muốn bồi dưỡng hằng tuần, luyện tập có cấu trúc và được hỗ trợ Toán liên tục.<br/>
-<em>Senior Maths Club bao gồm phần ôn tập nâng cao và luyện tập đến hết Lớp 12.</em>
+  适合当前 <b>未参加辅导课程</b>、但希望获得每周拓展练习、有结构训练和持续数学支持的学生。<br/>
+<em>高年级数学俱乐部包含更高层次的复习与练习，覆盖至 12 年级。</em>
 </p>
 <div class="club-grid">
 <div class="club-card">
-<h3>✨ Học sinh tiểu học</h3>
+<h3>✨ 小学学生</h3>
 <p class="price-lines">
-            $7 / tuần<br/>
-            $28 / tháng<br/>
-<span>$250 / năm</span> <span class="best-value">Giá tốt nhất</span>
+   $7 / 每周<br/>
+   $28 / 每月<br/>
+<span>$250 / 每年</span> <span class="best-value">更高性价比</span>
 </p>
 <p style="margin-top:10px; font-size:14px; line-height:1.6; opacity:.9;">
-            Phù hợp cho học sinh đang xây dựng sự tự tin, độ trôi chảy và nền tảng vững chắc.
-          </p>
+   适合正在建立自信、计算流畅度和扎实基础的学生。
+   </p>
 </div>
 <div class="club-card">
-<h3>✨ Học sinh Lớp 7–10</h3>
+<h3>✨ 7–10年级学生</h3>
 <p class="price-lines">
-            $10 / tuần<br/>
-            $40 / tháng<br/>
-<span>$350 / năm</span> <span class="best-value">Giá tốt nhất</span>
+   $10 / 每周<br/>
+   $40 / 每月<br/>
+<span>$350 / 每年</span> <span class="best-value">更高性价比</span>
 </p>
 <p style="margin-top:10px; font-size:14px; line-height:1.6; opacity:.9;">
-            Phù hợp để bồi dưỡng kỹ năng đều đặn, giải quyết vấn đề và duy trì việc luyện tập hằng tuần.
-          </p>
+   适合稳定发展技能、提升问题解决能力并保持每周规律练习的学生。
+   </p>
 </div>
 <div class="club-card">
-<h3>🎓 Senior Maths Club (Lớp 11–12)</h3>
+<h3>🎓 高年级数学俱乐部（11–12年级）</h3>
 <p class="price-lines">
-            $13 / tuần<br/>
-            $50 / tháng<br/>
-<span>$450 / năm</span> <span class="best-value">Giá tốt nhất</span>
+   $13 / 每周<br/>
+   $50 / 每月<br/>
+<span>$450 / 每年</span> <span class="best-value">更高性价比</span>
 </p>
 <p style="margin-top:10px; font-size:14px; line-height:1.6; opacity:.9;">
-            Phù hợp cho ôn tập có cấu trúc, luyện đề và tài liệu xem lại đến trình độ Lớp 12.
-          </p>
+   适合进行有结构的复习、考试风格练习，以及学习至 12 年级水平的复习材料。
+   </p>
 </div>
+</div>
+<div class="btn-row" style="margin-top:16px;">
+<a class="btn btn-outline" href="mathclub.html">了解更多</a>
+<a class="btn btn-amber" href="club-register.html">报名参加数学俱乐部</a>
+<a class="btn btn-amber" href="mathclub.html">数学俱乐部详情</a>
 </div>
 </section>
-<!-- Discounts & Rewards -->
 <section class="discounts-section section" id="discounts-rewards">
-<h2 class="section-title" style="text-align:center; margin-top:0;">Giảm giá &amp; thưởng</h2>
+<h2 class="section-title" style="text-align:center; margin-top:0;">🎁 优惠与奖励</h2>
 <p class="discounts-subtitle">
-        Chúng tôi mong muốn hỗ trợ gia đình và ghi nhận nỗ lực, tiến bộ và sự trưởng thành của học sinh.
-      </p>
+  我们希望支持家庭，同时肯定学生的努力、进步与成长。
+  </p>
 <div class="discounts-row">
 <div class="discount-card">
-<h3>1. Giảm giá đặt theo gói (Dạy kèm)</h3>
+<h3>💛 1. 课时包优惠（辅导课程）</h3>
 <p>
-            Giảm <b>10%</b> khi đặt gói <b>từ 10 buổi dạy kèm trở lên</b> và thanh toán trước.
-          </p>
+   当您一次预订 <b>10 节或以上辅导课</b>并提前付款时，可享受 <b>9 折优惠</b>。
+   </p>
 <ul>
-<li>Áp dụng cho lớp 1 kèm 1 và lớp nhóm.</li>
-<li>Giúp gia đình chủ động kế hoạch và giảm tổng chi phí.</li>
+<li>适用于一对一和小组课程。</li>
+<li>帮助家庭更好规划，同时降低整体学习成本。</li>
 </ul>
 </div>
 <div class="discount-card">
-<h3>2. Giảm giá cho gia đình</h3>
-<p>Hỗ trợ gia đình có nhiều hơn một con học cùng chúng tôi:</p>
+<h3>👨‍👩‍👧‍👦 2. 家庭折扣</h3>
+<p>为了支持有多个孩子一起学习的家庭：</p>
 <ul>
-<li><b>Con thứ 2:</b> giảm 10%</li>
-<li><b>Con thứ 3:</b> giảm 20%</li>
+<li><b>第二个孩子：</b>9 折</li>
+<li><b>第三个孩子：</b>8 折</li>
 </ul>
 <div class="example-box">
-<strong>Ví dụ – 3 con</strong><br/><br/>
-            Bé A: học phí cao nhất → không giảm theo gia đình<br/>
-            Bé B: học phí trung bình → giảm 10%<br/>
-            Bé C: học phí thấp nhất → giảm 20%<br/><br/>
-            Mức giảm tối đa cho mỗi bé mỗi kỳ: <strong>20%</strong>.
-          </div>
+<strong>示例：3 个孩子一起报名</strong><br/><br/>
+   孩子 A：费用最高 → 不享受家庭折扣<br/>
+   孩子 B：中间费用 → 9 折<br/>
+   孩子 C：最低费用 → 8 折<br/><br/>
+   每位学生每个计费周期的最高折扣为 <strong>20%</strong>。
+   </div>
 </div>
 <div class="discount-card">
-<h3>3. Hỗ trợ cho gia đình</h3>
+<h3>💬 3. 家庭支持</h3>
 <p>
-            Nếu ngân sách của bạn hạn chế, hãy liên hệ — chúng tôi có thể ghép lớp nhóm nhỏ hoặc gợi ý phương án phù hợp.
-          </p>
+   如果您的预算有限，请联系我们——我们可能可以帮助安排进入小组课程，或提供更合适的建议。
+   </p>
 <ul>
-<li>Nhóm nhỏ có thể giảm chi phí mà vẫn đảm bảo chất lượng.</li>
-<li>Chúng tôi có thể đề xuất kế hoạch hiệu quả nhất theo mục tiêu.</li>
+<li>小组课程可以在保持质量的同时降低费用。</li>
+<li>我们可以根据您的目标推荐最合适、最高效的学习方案。</li>
 </ul>
 </div>
 </div>
 <div class="discount-card-wide">
-<h3>4. Thưởng tiến bộ &amp; thành tích</h3>
-<p>Học sinh có thể nhận tối đa <b>10%</b> giảm cho kỳ học phí kế tiếp.</p>
+<h3>🏅 4. 进步与成就奖励</h3>
+<p>学生在下一个计费周期中，最多可获得 <b>10% 折扣</b>奖励。</p>
 <ul>
-<li><b>Duy trì kết quả tốt – 5%</b>: kết quả ổn định, mạnh.</li>
-<li><b>Cải thiện điểm ở trường – 5%</b>: cải thiện rõ (ví dụ C→B, B→A).</li>
-<li><b>Tiến bộ đều – 5%</b>: tự tin, độ chính xác, lập luận, mức độ tham gia.</li>
+<li><b>持续保持高水平 – 5%</b>：学习表现持续优秀。</li>
+<li><b>学校成绩提升 – 5%</b>：有明显进步（例如 C→B，B→A）。</li>
+<li><b>持续稳定进步 – 5%</b>：体现在自信、准确率、推理能力和课堂投入度上。</li>
 </ul>
-<p style="margin:0;">Nếu đạt nhiều tiêu chí, mức thưởng tối đa là <b>10%</b>.</p>
+<p style="margin:0;">若同时满足多项标准，奖励折扣上限为 <b>10%</b>。</p>
 </div>
 <div class="discount-card-green">
-<h3>5. Cách áp dụng giảm giá</h3>
+<h3>🔎 5. 折扣如何应用</h3>
 <ul>
-<li>Mỗi kỳ thanh toán, mỗi bé chỉ áp dụng <b>một</b> loại giảm giá.</li>
-<li>Nếu có nhiều loại giảm giá, sẽ áp dụng mức <b>cao nhất</b>.</li>
-<li>Mức giảm tối đa cho mỗi bé là <b>20%</b> mỗi kỳ.</li>
+<li>每位学生每个计费周期只适用一种折扣。</li>
+<li>如有多种折扣同时适用，将采用其中 <b>最高</b> 的一种。</li>
+<li>每位学生每个计费周期的最高折扣为 <b>20%</b>。</li>
 </ul>
 </div>
 </section>
-<!-- Policies summary -->
 <section class="section" id="policies-summary">
 <div class="card">
-<h2 class="section-title" style="margin-top:0;">Tóm tắt chính sách</h2>
+<h2 class="section-title" style="margin-top:0;">政策概览</h2>
 <ul class="policy-list">
-<li>Buổi học được thanh toán trước và xếp lịch trước.</li>
-<li>Vui lòng báo trước ít nhất <strong>24 giờ</strong> khi huỷ/đổi lịch.</li>
-<li>Chúng tôi duy trì môi trường học tôn trọng và hỗ trợ.</li>
+<li>课程费用需预付，并提前安排好时间。</li>
+<li>如需取消或改期，请至少提前 <strong>24 小时通知</strong>。</li>
+<li>我们会维持尊重、支持性的学习环境。</li>
 </ul>
 <p class="section-sub" style="margin:12px 0 0;">
-          Xem chi tiết tại <a href="policies.html">Chính sách</a>.
-        </p>
+   完整详情请阅读我们的 <a href="policies.html">政策</a>。
+  </p>
 </div>
 </section>
-<!-- Bottom CTAs -->
 <section class="section" id="cta-bottom">
 <div class="card" style="padding:22px;">
-<h2 class="section-title" style="margin:0 0 10px;">Chưa chắc lựa chọn nào phù hợp nhất cho con bạn?</h2>
+<h2 class="section-title" style="margin:0 0 10px;">不确定哪种方案最适合您的孩子？</h2>
 <p class="section-sub" style="margin:0 0 14px;">
-          Cho chúng tôi biết khối lớp + mục tiêu (bắt kịp / theo kịp / bứt phá). Chúng tôi sẽ gợi ý điểm bắt đầu phù hợp nhất.
-        </p>
+   告诉我们孩子的年级和目标（补基础 / 跟上进度 / 提前拓展），我们会推荐最合适的起点。
+  </p>
 <div class="btn-row">
-<a class="btn btn-success" href="enquiry.html">Gửi yêu cầu</a>
-<a class="btn btn-amber" href="register.html">Đăng ký</a>
-<a class="btn btn-amber" href="programs.html">Quay lại Chương trình</a>
+<a class="btn btn-success" href="enquiry.html">咨询</a>
+<a class="btn btn-amber" href="register.html">报名</a>
+<a class="btn btn-amber" href="programs.html">返回课程项目</a>
 </div>
 </div>
 </section>
