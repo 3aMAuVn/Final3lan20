@@ -9291,102 +9291,111 @@ body:not(.page-demo):not([class*="page-demo-"]) .page-hero{
 
 
 
+/* === 2026-03-29 force all pages to full screen width === */
+html, body{
+  width:100%;
+  max-width:100%;
+  margin:0;
+  padding:0;
+  overflow-x:hidden !important;
+}
 
-/* Keep header/footer shell as already working */
+/* Main shell: no side width cap, no side gutter */
+.wrap,
+main.wrap,
+.container,
 .topbar .container,
 .footer .container,
-.footer-inline .container{
+.footer-inline .container,
+.hero .container,
+.page-hero .container,
+main > .container,
+main .container,
+section > .container,
+section .container,
+.container > .wrap,
+.container > section.wrap,
+.container .price-tool > .wrap,
+.container .price-tool .wrap{
   width:100% !important;
   max-width:none !important;
+  margin:0 !important;
   padding-left:0 !important;
   padding-right:0 !important;
-  margin:0 !important;
   box-sizing:border-box !important;
+  position:static !important;
+  left:auto !important;
+  right:auto !important;
+  transform:none !important;
 }
 
-/* Make the visible page sections themselves span the screen.
-   This matches how the demo page's white card feels across the viewport. */
+/* Visible page sections: full screen width too */
 .hero-snap,
-.quicklinks,
-details.acc,
-.club-highlight,
-.page-card,
-.form-card,
-.policy-summary,
-.price-tool,
-.premium-panel,
-.program-feature-hero,
-.home-demo-showcase,
-.page-hero,
-.card{
-  width:100vw !important;
-  max-width:100vw !important;
-  position:relative !important;
-  left:50% !important;
-  right:50% !important;
-  margin-left:-50vw !important;
-  margin-right:-50vw !important;
-  box-sizing:border-box !important;
-}
-
-/* Fee page specific: remove inner caps that kept it boxed in */
-.price-tool .wrap,
-.price-grid,
-.triple-grid,
-.club-section,
-.imp-box{
-  width:100% !important;
-  max-width:none !important;
-  box-sizing:border-box !important;
-}
-
-/* Demo sub-pages already work, but keep their card width consistent too */
-body.page-demo .card,
-body[class*="page-demo"] .card{
-  margin-top:22px !important;
-  margin-bottom:40px !important;
-}
-
-/* Add inner padding to the content inside widened blocks so text stays readable */
-.hero-snap,
-.quicklinks,
-details.acc,
-.club-highlight,
-.page-card,
-.form-card,
-.policy-summary,
-.price-tool,
-.premium-panel,
-.program-feature-hero,
-.home-demo-showcase,
-.card{
-  padding-left:24px !important;
-  padding-right:24px !important;
-}
-
-.page-hero > .container.page-hero__inner,
 .hero-snap-grid,
 .hero-snap-full,
-.ql-grid,
-.acc-body,
-.program-feature-grid,
-.two-grid,
-.why-grid,
-.grid,
-.mini-grid,
+.quicklinks,
+details.acc,
+details.programs-wrap,
+.philosophy-wrap,
+.club-wrap,
+.club-shell,
+.club-card,
+.club-highlight,
+.page-card,
+.form-card,
+.policy-summary,
 .policy-grid,
 .price-grid,
-.price-tool .wrap,
-.triple-grid{
+.price-tool,
+.premium-panel,
+.diff-wrap,
+.why-grid,
+.two-grid,
+.grid,
+.mini-grid,
+.qr-grid,
+.program-feature-hero,
+.program-feature-grid,
+.home-demo-showcase,
+.page-hero{
   width:100% !important;
   max-width:none !important;
+  margin-left:0 !important;
+  margin-right:0 !important;
   box-sizing:border-box !important;
+}
+
+/* Non-demo page hero specifically: remove screen gap */
+body:not(.page-demo):not([class*="page-demo-"]) .page-hero{
+  width:100% !important;
+  max-width:none !important;
+  margin:18px 0 24px !important;
+  padding:0 !important;
+}
+
+/* Keep inner content readable without shrinking the outer shell */
+.hero-snap,
+.quicklinks,
+details.acc,
+details.programs-wrap,
+.club-highlight,
+.page-card,
+.form-card,
+.policy-summary,
+.price-tool,
+.premium-panel,
+.program-feature-hero,
+.home-demo-showcase,
+.page-hero > .container.page-hero__inner{
+  padding-left:24px !important;
+  padding-right:24px !important;
 }
 
 @media (max-width:700px){
   .hero-snap,
   .quicklinks,
   details.acc,
+  details.programs-wrap,
   .club-highlight,
   .page-card,
   .form-card,
@@ -9395,101 +9404,6 @@ details.acc,
   .premium-panel,
   .program-feature-hero,
   .home-demo-showcase,
-  .card{
-    padding-left:12px !important;
-    padding-right:12px !important;
-  }
-}
-
-
-
-/* === 2026-03-29 visible sections full width, safe hero === */
-html, body{
-  width:100%;
-  max-width:100%;
-  overflow-x:hidden !important;
-}
-
-/* Keep header/footer full width */
-.topbar .container,
-.footer .container,
-.footer-inline .container{
-  width:100% !important;
-  max-width:none !important;
-  padding-left:0 !important;
-  padding-right:0 !important;
-  margin:0 !important;
-  box-sizing:border-box !important;
-}
-
-/* Hero sections: full width without breakout shifting */
-.hero,
-.page-hero{
-  width:100% !important;
-  max-width:none !important;
-  margin-left:0 !important;
-  margin-right:0 !important;
-  left:auto !important;
-  right:auto !important;
-  position:relative !important;
-  transform:none !important;
-  box-sizing:border-box !important;
-}
-
-.hero .container,
-.page-hero .container,
-.page-hero > .container.page-hero__inner{
-  width:100% !important;
-  max-width:none !important;
-  margin:0 !important;
-  padding-left:24px !important;
-  padding-right:24px !important;
-  left:auto !important;
-  right:auto !important;
-  position:static !important;
-  transform:none !important;
-  box-sizing:border-box !important;
-}
-
-/* Visible non-hero sections can still use wide layout */
-.quicklinks,
-details.acc,
-.club-highlight,
-.page-card,
-.form-card,
-.policy-summary,
-.price-tool,
-.premium-panel,
-.program-feature-hero,
-.home-demo-showcase,
-.card{
-  width:100% !important;
-  max-width:none !important;
-  box-sizing:border-box !important;
-}
-
-/* Fee page and inner grids */
-.price-tool .wrap,
-.price-grid,
-.triple-grid,
-.club-section,
-.imp-box,
-.ql-grid,
-.acc-body,
-.program-feature-grid,
-.two-grid,
-.why-grid,
-.grid,
-.mini-grid,
-.policy-grid{
-  width:100% !important;
-  max-width:none !important;
-  box-sizing:border-box !important;
-}
-
-@media (max-width:700px){
-  .hero .container,
-  .page-hero .container,
   .page-hero > .container.page-hero__inner{
     padding-left:12px !important;
     padding-right:12px !important;

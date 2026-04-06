@@ -107,9 +107,17 @@
 
   function initPricingTool() {
     if (!document.getElementById('priceBody')) return;
-    var isVi = document.documentElement.lang === 'vi' || document.body.classList.contains('page-vi');
+    var isZh = document.documentElement.lang === 'zh' || document.body.classList.contains('page-cn');
+    var isVi = !isZh && (document.documentElement.lang === 'vi' || document.body.classList.contains('page-vi'));
 
-    var rows = isVi ? [
+    var rows = isZh ? [
+      { icon:'👩‍🏫', program:'一对一', p30:{ online:55, inperson:60 }, p60:{ online:100, inperson:110 } },
+      { icon:'👩‍👦', program:'2 位学生', p30:{ online:45, inperson:50 }, p60:{ online:80, inperson:90 } },
+      { icon:'👨‍👩‍👧', program:'3 位学生', p30:{ online:35, inperson:40 }, p60:{ online:60, inperson:70 } },
+      { icon:'👨‍👩‍👧‍👦', program:'4 位学生', p30:{ online:30, inperson:35 }, p60:{ online:50, inperson:60 } },
+      { icon:'👨‍👩‍👧‍👦🧑', program:'5 位学生', p30:{ online:25, inperson:30 }, p60:{ online:40, inperson:50 }, min60:true },
+      { icon:'👨‍👩‍👧‍👦🧑+', program:'5 位以上学生', p30:{ online:20, inperson:25 }, p60:{ online:35, inperson:45 }, min60:true }
+    ] : isVi ? [
       { icon:'👩‍🏫', program:'1 kèm 1', p30:{ online:55, inperson:60 }, p60:{ online:100, inperson:110 } },
       { icon:'👩‍👦', program:'2 học sinh', p30:{ online:45, inperson:50 }, p60:{ online:80, inperson:90 } },
       { icon:'👨‍👩‍👧', program:'3 học sinh', p30:{ online:35, inperson:40 }, p60:{ online:60, inperson:70 } },
@@ -124,7 +132,11 @@
       { icon:'👨‍👩‍👧‍👦🧑', program:'5 students', p30:{ online:25, inperson:30 }, p60:{ online:40, inperson:50 }, min60:true },
       { icon:'👨‍👩‍👧‍👦🧑+', program:'5+ students', p30:{ online:20, inperson:25 }, p60:{ online:35, inperson:45 }, min60:true }
     ];
-    var adjustments = isVi ? {
+    var adjustments = isZh ? {
+      primary:{ add30:-5, add60:-10, badge:'小学阶段调整', rule:'小学数学：每位学生 30 分钟减 $5，60 分钟减 $10。', extra:'提示：如果孩子需要提高或拓展，请联系我们了解更合适的学习方案。' },
+      mid:{ add30:0, add60:0, badge:'标准收费', rule:'7–10年级数学：标准收费（无额外调整）。', extra:'提示：60 分钟课程通常能带来更多练习与反馈。' },
+      vce:{ extra:'对于 VCE 数学，我们强烈建议安排 60 分钟课程。' }
+    } : isVi ? {
       primary:{ add30:-5, add60:-10, badge:'Điều chỉnh Tiểu học', rule:'Toán Tiểu học: –$5 (30 phút) và –$10 (60 phút) mỗi học sinh.', extra:'Gợi ý: nếu con bạn cần bồi dưỡng hoặc nâng cao, hãy hỏi về lộ trình phù hợp.' },
       mid:{ add30:0, add60:0, badge:'Giá chuẩn', rule:'Toán Lớp 7–10: giá chuẩn (không điều chỉnh).', extra:'Gợi ý: buổi 60 phút có thêm thời gian luyện tập + phản hồi.' },
       vce:{ extra:'Với Toán VCE, chúng tôi khuyến nghị mạnh mẽ buổi 60 phút.' }
@@ -133,7 +145,11 @@
       mid:{ add30:0, add60:0, badge:'Standard pricing', rule:'Years 7–10 Maths: standard pricing (no adjustment).', extra:'Tip: 60-minute sessions allow more practice + feedback.' },
       vce:{ extra:'For VCE Maths, 60-minute sessions are strongly recommended.' }
     };
-    var vceSubjects = isVi ? {
+    var vceSubjects = isZh ? {
+      general:{ add30:+10, add60:+15, label:'VCE 普通数学：30 分钟 +$10，60 分钟 +$15（每位学生）。' },
+      methods:{ add30:+15, add60:+20, label:'VCE 数学方法：30 分钟 +$15，60 分钟 +$20（每位学生）。' },
+      specialist:{ add30:+20, add60:+25, label:'VCE 专业数学：30 分钟 +$20，60 分钟 +$25（每位学生）。' }
+    } : isVi ? {
       general:{ add30:+10, add60:+15, label:'VCE Toán Tổng quát: +$10 (30) và +$15 (60) mỗi học sinh.' },
       methods:{ add30:+15, add60:+20, label:'VCE Toán Phương pháp: +$15 (30) và +$20 (60) mỗi học sinh.' },
       specialist:{ add30:+20, add60:+25, label:'VCE Toán Chuyên sâu: +$20 (30) và +$25 (60) mỗi học sinh.' }
@@ -142,7 +158,13 @@
       methods:{ add30:+15, add60:+20, label:'VCE Maths Methods: +$15 (30) and +$20 (60) per student.' },
       specialist:{ add30:+20, add60:+25, label:'VCE Specialist Maths: +$20 (30) and +$25 (60) per student.' }
     };
-    var tracks = isVi ? {
+    var tracks = isZh ? {
+      standard:{ add30:0, add60:0, name:'标准课程', label:'标准辅导：+$0。', min60:false, extra:'重点：配合学校进度、作业支持与建立信心。' },
+      extension:{ add30:+5, add60:+10, name:'拓展课程', label:'拓展课程：30 分钟 +$5，60 分钟 +$10（每位学生）。', min60:false, extra:'重点：提高、加深理解与更高层次题目。' },
+      selective:{ add30:+10, add60:+20, name:'选拔考试', label:'选拔考试：30 分钟 +$10，60 分钟 +$20（每位学生）。', min60:true, extra:'重点：应试技巧、速度、推理与真题练习。' },
+      amc:{ add30:+15, add60:+25, name:'AMC/AMO', label:'AMC/AMO：30 分钟 +$15，60 分钟 +$25（每位学生）。', min60:true, extra:'重点：竞赛策略、高阶思维与问题解决。' },
+      amointensive:{ add30:+20, add60:+30, name:'竞赛强化', label:'竞赛强化：30 分钟 +$20，60 分钟 +$30（每位学生）。', min60:true, extra:'重点：高阶奥数训练、证明题与高难度题组。' }
+    } : isVi ? {
       standard:{ add30:0, add60:0, name:'Chuẩn', label:'Dạy kèm chuẩn: +$0.', min60:false, extra:'Trọng tâm: bám sát ở trường, hỗ trợ bài tập, xây tự tin.' },
       extension:{ add30:+5, add60:+10, name:'Nâng cao', label:'Nâng cao: +$5 (30) và +$10 (60) mỗi học sinh.', min60:false, extra:'Trọng tâm: bồi dưỡng, hiểu sâu, bài nâng cao.' },
       selective:{ add30:+10, add60:+20, name:'Thi tuyển chọn', label:'Thi tuyển chọn: +$10 (30) và +$20 (60) mỗi học sinh.', min60:true, extra:'Trọng tâm: kỹ thuật làm bài, tốc độ, lập luận, luyện đề.' },
@@ -162,34 +184,34 @@
     function totalAdd60(){ var y=yearAdj(), t=tracks[currentTrack]; return (y.add60||0)+(t.add60||0); }
     function setText(id, txt){ var el=document.getElementById(id); if(el) el.textContent=txt; }
     function setHTML(id, html){ var el=document.getElementById(id); if(el) el.innerHTML=html; }
-    function priceCells(online, inperson){ return '<div class="cells"><div class="pricebox"><div class="price">'+money(online)+'</div><div class="tag online">'+(isVi?'Trực tuyến':'🌐 Online')+'</div></div><div class="pricebox"><div class="price">'+money(inperson)+'</div><div class="tag inperson">'+(isVi?'Trực tiếp':'📍 In-person')+'</div></div></div>'; }
-    function selectionLabel(){ var yearLabel = currentLevel === 'primary' ? (isVi ? 'Tiểu học' : 'Primary') : currentLevel === 'mid' ? (isVi ? 'Lớp 7–10' : 'Years 7–10') : (isVi ? 'VCE ('+(currentVce==='general'?'Tổng quát':currentVce==='methods'?'Phương pháp':'Chuyên sâu')+')' : 'VCE '+currentVce.charAt(0).toUpperCase()+currentVce.slice(1)); return yearLabel + ' • ' + tracks[currentTrack].name; }
+    function priceCells(online, inperson){ return '<div class="cells"><div class="pricebox"><div class="price">'+money(online)+'</div><div class="tag online">'+(isZh?'线上':isVi?'Trực tuyến':'🌐 Online')+'</div></div><div class="pricebox"><div class="price">'+money(inperson)+'</div><div class="tag inperson">'+(isZh?'线下':isVi?'Trực tiếp':'📍 In-person')+'</div></div></div>'; }
+    function selectionLabel(){ var yearLabel = currentLevel === 'primary' ? (isZh ? '小学' : isVi ? 'Tiểu học' : 'Primary') : currentLevel === 'mid' ? (isZh ? '7–10年级' : isVi ? 'Lớp 7–10' : 'Years 7–10') : (isZh ? 'VCE ' + (currentVce==='general'?'普通数学':currentVce==='methods'?'数学方法':'专业数学') : isVi ? 'VCE ('+(currentVce==='general'?'Tổng quát':currentVce==='methods'?'Phương pháp':'Chuyên sâu')+')' : 'VCE '+currentVce.charAt(0).toUpperCase()+currentVce.slice(1)); return yearLabel + ' • ' + tracks[currentTrack].name; }
     function updateFeesAtGlance(){
       var add30=totalAdd30(), add60=totalAdd60(), oneToOne=rows[0], force60_1to1=!!oneToOne.min60 || tracks[currentTrack].min60;
       setText('glance-price-online', '$'+(oneToOne.p60.online+add60));
       setText('glance-price-inperson', '$'+(oneToOne.p60.inperson+add60));
       var label=selectionLabel();
-      setText('glance-badge-online', (isVi ? '1 kèm 1 • 60 phút • ' : '1-to-1 • 60 min • ') + label);
-      setText('glance-badge-inperson', (isVi ? '1 kèm 1 • 60 phút • ' : '1-to-1 • 60 min • ') + label);
-      setText('glance-badge-30', (isVi ? '1 kèm 1 • 30 phút • ' : '1-to-1 • 30 min • ') + label);
+      setText('glance-badge-online', (isZh ? '一对一 • 60 分钟 • ' : isVi ? '1 kèm 1 • 60 phút • ' : '1-to-1 • 60 min • ') + label);
+      setText('glance-badge-inperson', (isZh ? '一对一 • 60 分钟 • ' : isVi ? '1 kèm 1 • 60 phút • ' : '1-to-1 • 60 min • ') + label);
+      setText('glance-badge-30', (isZh ? '一对一 • 30 分钟 • ' : isVi ? '1 kèm 1 • 30 phút • ' : '1-to-1 • 30 min • ') + label);
       if(force60_1to1){
-        setText('glance-price-30', isVi ? 'Bắt buộc 60 phút' : '60-min required');
-        setText('glance-30-note', isVi ? 'Lựa chọn này yêu cầu buổi 60 phút để đảm bảo chất lượng/kết quả.' : 'This selection requires 60-minute sessions for quality/results.');
-        setHTML('glance-30-helper', isVi ? '<strong>Vì sao?</strong> Cần đủ thời gian cho chiến lược + luyện sâu + phản hồi.' : '<strong>Why?</strong> These programs need time for strategy + deep practice + feedback.');
+        setText('glance-price-30', isZh ? '需 60 分钟' : isVi ? 'Bắt buộc 60 phút' : '60-min required');
+        setText('glance-30-note', isZh ? '该选择需要 60 分钟课程，以保证质量和效果。' : isVi ? 'Lựa chọn này yêu cầu buổi 60 phút để đảm bảo chất lượng/kết quả.' : 'This selection requires 60-minute sessions for quality/results.');
+        setHTML('glance-30-helper', isZh ? '<strong>为什么？</strong> 这些课程需要足够时间进行策略讲解、深入练习与反馈。' : isVi ? '<strong>Vì sao?</strong> Cần đủ thời gian cho chiến lược + luyện sâu + phản hồi.' : '<strong>Why?</strong> These programs need time for strategy + deep practice + feedback.');
       } else {
         setText('glance-price-30', '$'+(oneToOne.p30.online+add30)+' / $'+(oneToOne.p30.inperson+add30));
-        setText('glance-30-note', isVi ? 'Trực tuyến / trực tiếp (mỗi học sinh)' : 'Online / In-person (per student)');
-        setText('glance-30-helper', isVi ? 'Gợi ý: 60 phút thường hiệu quả hơn (nhiều thời gian luyện tập + phản hồi).' : 'Tip: 60 minutes usually gives better progress (more time for practice + feedback).');
+        setText('glance-30-note', isZh ? '线上 / 线下（每位学生）' : isVi ? 'Trực tuyến / trực tiếp (mỗi học sinh)' : 'Online / In-person (per student)');
+        setText('glance-30-helper', isZh ? '提示：60 分钟通常更有效，因为有更多时间进行练习与反馈。' : isVi ? 'Gợi ý: 60 phút thường hiệu quả hơn (nhiều thời gian luyện tập + phản hồi).' : 'Tip: 60 minutes usually gives better progress (more time for practice + feedback).');
       }
       var fivePlus=rows[5];
-      setText('glance-badge-5plus', (isVi ? '5+ học sinh • 60 phút • ' : '5+ students • 60 min • ') + label);
+      setText('glance-badge-5plus', (isZh ? '5 位以上学生 • 60 分钟 • ' : isVi ? '5+ học sinh • 60 phút • ' : '5+ students • 60 min • ') + label);
       setText('glance-price-5plus', '$'+(fivePlus.p60.online+add60)+' / $'+(fivePlus.p60.inperson+add60));
-      setText('glance-per-5plus', isVi ? 'mỗi 60 phút (trực tuyến / trực tiếp • mỗi học sinh)' : 'per 60 minutes (online / in-person • per student)');
+      setText('glance-per-5plus', isZh ? '每 60 分钟（线上 / 线下 • 每位学生）' : isVi ? 'mỗi 60 phút (trực tuyến / trực tiếp • mỗi học sinh)' : 'per 60 minutes (online / in-person • per student)');
     }
     function render(){
       var y=yearAdj(), t=tracks[currentTrack], vceBox=document.getElementById('vceBox');
       if(vceBox) vceBox.style.display = currentLevel === 'vce' ? 'block' : 'none';
-      setText('badgeYear', currentLevel === 'vce' ? (isVi ? 'Môn VCE' : 'VCE subject') : adjustments[currentLevel].badge);
+      setText('badgeYear', currentLevel === 'vce' ? (isZh ? 'VCE 科目' : isVi ? 'Môn VCE' : 'VCE subject') : adjustments[currentLevel].badge);
       setText('badgeTrack', t.name);
       setHTML('ruleLine', (currentLevel === 'vce' ? y.label : adjustments[currentLevel].rule) + '<br>' + t.label);
       setText('extraLine', ((currentLevel === 'vce' ? adjustments.vce.extra : adjustments[currentLevel].extra) + ' ' + t.extra).trim());
@@ -200,7 +222,7 @@
         var tdIcon=document.createElement('td'); tdIcon.className='icon'; tdIcon.textContent=r.icon;
         var tdProg=document.createElement('td'); tdProg.innerHTML='<div class="program">'+r.program+'</div>';
         var td30=document.createElement('td'); var force60=!!r.min60 || tracks[currentTrack].min60;
-        if(force60){ td30.innerHTML='<div class="locked"><div class="label">'+(isVi?'Tối thiểu 60 phút':'60-minute minimum')+'</div><div class="small">'+(r.min60 ? (isVi?'Với nhóm 5+ học sinh, chỉ áp dụng buổi 60 phút để đảm bảo chất lượng buổi học.':'For 5+ students we only offer 60-minute sessions to keep lesson quality high.') : (isVi?'Với loại chương trình này, buổi 60 phút là bắt buộc để đạt kết quả tốt.':'For this program type, 60-minute sessions are required for best results.'))+'</div></div>'; }
+        if(force60){ td30.innerHTML='<div class="locked"><div class="label">'+(isZh?'至少 60 分钟':isVi?'Tối thiểu 60 phút':'60-minute minimum')+'</div><div class="small">'+(r.min60 ? (isZh?'对于 5 位以上学生的小组课，我们只提供 60 分钟课程，以保证教学质量。':isVi?'Với nhóm 5+ học sinh, chỉ áp dụng buổi 60 phút để đảm bảo chất lượng buổi học.':'For 5+ students we only offer 60-minute sessions to keep lesson quality high.') : (isZh?'该课程类型需要 60 分钟课程，才能取得更好的效果。':isVi?'Với loại chương trình này, buổi 60 phút là bắt buộc để đạt kết quả tốt.':'For this program type, 60-minute sessions are required for best results.'))+'</div></div>'; }
         else { td30.innerHTML=priceCells(r.p30.online+add30, r.p30.inperson+add30); }
         var td60=document.createElement('td'); td60.innerHTML=priceCells(r.p60.online+add60, r.p60.inperson+add60);
         tr.appendChild(tdIcon); tr.appendChild(tdProg); tr.appendChild(td30); tr.appendChild(td60); tbody.appendChild(tr);
